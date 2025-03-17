@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         setContentView(R.layout.activity_main)
 
@@ -36,10 +36,31 @@ class MainActivity : AppCompatActivity() {
         val navView = findViewById<BottomNavigationView>(R.id.main_bottomNavigationView)
         setupWithNavController(navView, navController)
 
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.postListFragment, R.id.searchFragment, R.id.createPostFragment,
+                R.id.likedPostsFragment, R.id.myProfileFragment -> {
+                    navController.popBackStack(R.id.postListFragment, true)
+                    navController.navigate(item.itemId)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration.Builder().build()
+        val topLevelDestinations: MutableSet<Int> = HashSet()
+        topLevelDestinations.add(R.id.postListFragment)
+        topLevelDestinations.add(R.id.searchFragment)
+        topLevelDestinations.add(R.id.createPostFragment)
+        topLevelDestinations.add(R.id.likedPostsFragment)
+        topLevelDestinations.add(R.id.myProfileFragment)
+
+        val appBarConfiguration: AppBarConfiguration =
+            AppBarConfiguration.Builder(topLevelDestinations).build()
         setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 }
