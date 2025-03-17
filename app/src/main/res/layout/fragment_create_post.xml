@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CreatePostFragment">
+
+    <TextView
+        android:id="@+id/title_create_post"
+        android:layout_width="284dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Share your outfit!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/outfit_img_create_post"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/user_post_list_row_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_create_post"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <ImageButton
+        android:id="@+id/edit_img_btn_create_post"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@+id/outfit_img_create_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toEndOf="@+id/outfit_img_create_post"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gallery" />
+
+    <ImageButton
+        android:id="@+id/camera_btn_create_post"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/camera_outline"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@+id/outfit_img_create_post"
+        app:layout_constraintEnd_toStartOf="@+id/outfit_img_create_post"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_name_create_post"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/user_post_list_row_border"
+        android:hint="Outfit Name..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_img_create_post" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_description_create_post"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="5dp"
+        android:background="@drawable/user_post_list_row_border"
+        android:hint="Description..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_name_create_post" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_pieces_create_post"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="5dp"
+        android:background="@drawable/user_post_list_row_border"
+        android:hint="Pieces..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_description_create_post" />
+
+    <Spinner
+        android:id="@+id/category_spinner_create_post"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_pieces_create_post" />
+
+    <Button
+        android:id="@+id/confirm_btn_create_post"
+        android:layout_width="185dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:text="Confirm"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_spinner_create_post" />
+</androidx.constraintlayout.widget.ConstraintLayout>
