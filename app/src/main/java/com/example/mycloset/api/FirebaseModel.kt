@@ -35,7 +35,29 @@ class FirebaseModel internal constructor() {
         mAuth = FirebaseAuth.getInstance()
     }
 
-   companion object {
+    fun uploadImage(name: String, bitmap: Bitmap, listener: Listener<String?>) {
+        val storageRef = storage.reference
+        val imagesRef =
+            storageRef.child("images/$name.jpeg")
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
+
+        val uploadTask = imagesRef.putBytes(data)
+        uploadTask.addOnFailureListener {
+            listener.onComplete(
+                null
+            )
+        }.addOnSuccessListener {
+            imagesRef.downloadUrl.addOnSuccessListener { uri ->
+                listener.onComplete(
+                    uri.toString()
+                )
+            }
+        }
+    }
+
+    companion object {
         val instance = FirebaseModel()
     }
 }
