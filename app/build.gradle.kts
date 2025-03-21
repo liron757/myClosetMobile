@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.mycloset"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.mycloset"
@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.storage.ktx)
+    implementation(libs.androidx.room.common)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
