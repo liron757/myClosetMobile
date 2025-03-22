@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
+    id("androidx.navigation.safeargs.kotlin") // Safe Args Plugin
     kotlin("kapt")
 }
 
@@ -10,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mycloset"
-        minSdk = 31
+        minSdk = 30
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -39,22 +41,42 @@ android {
         jvmTarget = "21"
     }
 }
-
+configurations.implementation{
+    exclude(group = "com.intellij", module = "annotations")
+}
 dependencies {
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.room.common)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
-    implementation(libs.lottie)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
-    implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.swiperefreshlayout)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Retrofit Coroutines Adapter
+    implementation(libs.retrofit2.kotlin.coroutines.adapter)
+
+    implementation (libs.picasso)
+
+    implementation (libs.androidx.swiperefreshlayout)
+
+    implementation (libs.lottie)
+    implementation (libs.play.services.tasks)
+    implementation (libs.picasso2.okhttp3.downloader)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.common.ktx)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.storage.ktx)
-    implementation(libs.androidx.room.common)
-
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

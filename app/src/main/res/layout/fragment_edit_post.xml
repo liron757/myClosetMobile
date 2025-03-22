@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.postinfo.EditPostFragment">
+
+    <ImageView
+        android:id="@+id/outfit_img_edit_post"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <ImageButton
+        android:id="@+id/camera_btn_edit_post"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/camera_outline"
+        app:layout_constraintBottom_toBottomOf="@+id/outfit_img_edit_post"
+        app:layout_constraintEnd_toStartOf="@+id/outfit_img_edit_post"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/edit_img_btn_edit_post"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/outfit_img_edit_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outfit_img_edit_post"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gallery" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_name_edit_post"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Outfit Name..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_img_edit_post" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_description_edit_post"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:hint="Description..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_name_edit_post" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/outfit_pieces_edit_post"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:hint="Pieces..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_description_edit_post" />
+
+    <Spinner
+        android:id="@+id/category_spinner_edit_post"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfit_pieces_edit_post" />
+
+    <LinearLayout
+        android:layout_width="338dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_spinner_edit_post">
+
+        <Button
+            android:id="@+id/cancel_btn_edit_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="0dp"/>
+        <Button
+            android:id="@+id/confirm_btn_edit_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Confirm" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
