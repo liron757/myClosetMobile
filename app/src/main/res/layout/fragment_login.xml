@@ -46,15 +46,17 @@
             android:id="@+id/login_username"
             android:layout_width="315dp"
             android:layout_height="50dp"
-            android:background="@drawable/input_frame"
+            android:paddingHorizontal="4dp"
+            android:background="@drawable/item_border"
             android:hint="Username..." />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password"
             android:layout_width="315dp"
             android:layout_height="50dp"
+            android:paddingHorizontal="4dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/input_frame"
+            android:background="@drawable/item_border"
             android:hint="Password..."
             android:inputType="textPassword" />
     </LinearLayout>
