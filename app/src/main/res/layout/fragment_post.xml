@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.postinfo.PostFragment">
+
+    <TextView
+        android:id="@+id/tvPostOutfitName"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="OutfitName"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnPostLike"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_outline" />
+
+    <ImageView
+        android:id="@+id/ivPostOutfit"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostOutfitName"
+        app:srcCompat="@drawable/menswear" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPostOutfit">
+
+        <TextView
+            android:id="@+id/tvNamePrefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvPostUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="UserName"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPostDescription"
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Description..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/tvOutfitPieces"
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        android:text="Pieces..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostDescription" />
+
+    <LinearLayout
+        android:id="@+id/llPostCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutfitPieces">
+
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOutfitCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="classic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutfitPieces" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnEditPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Post" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btnDeletePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete Post"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutfitCategory" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
