@@ -10,7 +10,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/user_post_list_row_border"
+        android:background="@drawable/item_border"
         android:gravity="center"
         android:clickable="true"
         android:orientation="horizontal"
