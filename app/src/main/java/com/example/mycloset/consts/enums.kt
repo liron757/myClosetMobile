@@ -8,3 +8,7 @@ enum class LoadingState {
 interface Listener<T> {
     fun onComplete(data: T)
 }
+
+val outfitCategories: List<String> = listOf(
+    "Causal", "Minimalist", "Classic", "Streetwear", "Sporty"
+)
